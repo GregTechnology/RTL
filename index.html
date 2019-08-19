@@ -11,16 +11,26 @@
     <link rel="icon" href="images/icon.ico" type="image/x-icon"/>
 </head>
 <body class="is-preload landing">
+
+<!--引入访问统计-->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
 <div id="page-wrapper">
 
     <!-- Header -->
     <header id="header">
         <h1 id="logo"><a href="index.html">主页</a></h1>
+        <div style="margin-left: 10%">
+            总计访问<span id="busuanzi_value_site_pv"></span>
+            您是访问Regain the Legend的第<span id="busuanzi_value_site_uv"></span>个小伙伴
+            <span id="busuanzi_value_page_pv"></span> Hits
+        </div>
         <nav id="nav">
             <ul>
                 <li><a href="index.html">管理简介</a></li>
 
-                                <li><a href="TutorialAndFriendLink.html">资源与友链</a></li>
+                <li><a href="TutorialAndFriendLink.html">资源与友链</a></li>
                 <!--                <li><a href="#">Sign Up</a></li>-->
                 <li>
                     <a href="#" class="button primary">周目历史</a>
@@ -46,19 +56,19 @@
         </nav>
     </header>
 
-<!--    特效-->
+    <!--    特效-->
     <canvas id="c" style="width:100%;height:100%"></canvas>
     <script>
-        ;(function(main) {
+        ;(function (main) {
             var args = {};
-            window.onload = function() {
+            window.onload = function () {
                 main(args);
             };
-        })(function(args) {
+        })(function (args) {
 
             'use strict';
 
-            var Box = function(x, y, w, h, s) {
+            var Box = function (x, y, w, h, s) {
                 this.x = x;
                 this.y = y;
                 this.w = w;
@@ -70,17 +80,17 @@
 
             Box.prototype = {
                 constructor: Box,
-                update: function() {
+                update: function () {
                     this.a += Math.random() * 0.5 - 0.25;
                     this.x += Math.cos(this.a) * this.s;
                     this.y += Math.sin(this.a) * this.s;
                     this.hue += 5;
-                    if(this.x > WIDTH) this.x = 0;
-                    else if(this.x < 0) this.x = WIDTH;
-                    if(this.y > HEIGHT) this.y = 0;
-                    else if(this.y < 0) this.y = HEIGHT;
+                    if (this.x > WIDTH) this.x = 0;
+                    else if (this.x < 0) this.x = WIDTH;
+                    if (this.y > HEIGHT) this.y = 0;
+                    else if (this.y < 0) this.y = HEIGHT;
                 },
-                render: function(ctx) {
+                render: function (ctx) {
                     ctx.save();
                     ctx.fillStyle = 'hsla(' + this.hue + ', 100%, 50%, 1)';
                     ctx.translate(this.x, this.y);
@@ -90,7 +100,7 @@
                 }
             };
 
-            var Circle = function(x, y, tx, ty, r) {
+            var Circle = function (x, y, tx, ty, r) {
                 this.x = x;
                 this.y = y;
                 this.ox = x;
@@ -112,9 +122,9 @@
 
             Circle.prototype = {
                 constructor: Circle,
-                update: function() {
+                update: function () {
 
-                    if(this.delayCtr < this.delay) {
+                    if (this.delayCtr < this.delay) {
                         this.delayCtr++;
                         return;
                     }
@@ -125,7 +135,7 @@
                     this.lx = this.x;
                     this.ly = this.y;
 
-                    if(!clickToggle) {
+                    if (!clickToggle) {
                         this.x += (this.tx - this.x) * this.sx;
                         this.y += (this.ty - this.y) * this.sy;
                     } else {
@@ -136,7 +146,7 @@
 
                     this.r = this.br + Math.cos(this.a) * (this.br * 0.5);
                 },
-                render: function(ctx) {
+                render: function (ctx) {
 
                     ctx.save();
                     ctx.globalAlpha = this.o;
@@ -147,7 +157,7 @@
                     ctx.fill();
                     ctx.restore();
 
-                    if(clickToggle) {
+                    if (clickToggle) {
                         ctx.save();
                         ctx.strokeStyle = 'hsla(' + this.hue + ', 100%, 50%, 1)';
                         ctx.beginPath();
@@ -193,10 +203,10 @@
 
             imgData = txtCtx.getImageData(0, 0, WIDTH, HEIGHT).data;
 
-            for(var y = 0; y < HEIGHT; y += skip) {
-                for(var x = 0; x < WIDTH; x += skip) {
+            for (var y = 0; y < HEIGHT; y += skip) {
+                for (var x = 0; x < WIDTH; x += skip) {
                     idx = (x + y * WIDTH) * 4 - 1;
-                    if(imgData[idx] > 0) {
+                    if (imgData[idx] > 0) {
                         a = Math.PI * 2 * Math.random();
                         circle = new Circle(
                             WIDTH / 2 + Math.cos(a) * WIDTH,
@@ -210,7 +220,7 @@
                 }
             }
 
-            for(var b = 0; b < 10; b++) {
+            for (var b = 0; b < 10; b++) {
                 box = new Box(
                     WIDTH * Math.random(),
                     HEIGHT * Math.random(),
@@ -222,7 +232,7 @@
             }
 
 
-            c.addEventListener('click', function(e) {
+            c.addEventListener('click', function (e) {
                 clickToggle = !clickToggle;
             });
 
@@ -238,13 +248,13 @@
 
                 ctx.globalCompositeOperation = 'lighter';
 
-                for(var i = 0, len = circles.length; i < len; i++) {
+                for (var i = 0, len = circles.length; i < len; i++) {
                     circle = circles[i];
                     circle.update();
                     circle.render(ctx);
                 }
 
-                for(var j = 0; j < boxList.length; j++) {
+                for (var j = 0; j < boxList.length; j++) {
                     box = boxList[j];
                     box.update();
                     box.render(ctx);
@@ -255,7 +265,6 @@
 
         });
     </script>
-
 
 
     <!-- Banner -->
@@ -296,11 +305,11 @@
                             疑问在线解答
                         </p>
                     </section>
-<!--                    <section class="col-4 col-6-medium col-12-xsmall">-->
-<!--                        <span class="icon alt major fa-flask"></span>-->
-<!--                        <h3>Cubilia cep lobortis</h3>-->
-<!--                        <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>-->
-<!--                    </section>-->
+                    <!--                    <section class="col-4 col-6-medium col-12-xsmall">-->
+                    <!--                        <span class="icon alt major fa-flask"></span>-->
+                    <!--                        <h3>Cubilia cep lobortis</h3>-->
+                    <!--                        <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>-->
+                    <!--                    </section>-->
                     <section class="col-4 col-6-medium col-12-xsmall">
                         <span class="icon alt major fa-paper-plane"></span>
                         <h3>极速连接</h3>
@@ -309,16 +318,16 @@
                             全国平均30ms
                         </p>
                     </section>
-<!--                    <section class="col-4 col-6-medium col-12-xsmall">-->
-<!--                        <span class="icon alt major fa-file"></span>-->
-<!--                        <h3>Odio laoreet accumsan</h3>-->
-<!--                        <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>-->
-<!--                    </section>-->
-<!--                    <section class="col-4 col-6-medium col-12-xsmall">-->
-<!--                        <span class="icon alt major fa-lock"></span>-->
-<!--                        <h3>Massa arcu accumsan</h3>-->
-<!--                        <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>-->
-<!--                    </section>-->
+                    <!--                    <section class="col-4 col-6-medium col-12-xsmall">-->
+                    <!--                        <span class="icon alt major fa-file"></span>-->
+                    <!--                        <h3>Odio laoreet accumsan</h3>-->
+                    <!--                        <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>-->
+                    <!--                    </section>-->
+                    <!--                    <section class="col-4 col-6-medium col-12-xsmall">-->
+                    <!--                        <span class="icon alt major fa-lock"></span>-->
+                    <!--                        <h3>Massa arcu accumsan</h3>-->
+                    <!--                        <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>-->
+                    <!--                    </section>-->
                 </div>
             </div>
             <footer class="major">

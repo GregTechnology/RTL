@@ -1,16 +1,20 @@
-<html>
+<html lang="zh-CN">
 <head>
     <title>Server Info</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css"/>
     </noscript>
     <link rel="icon" href="images/icon.ico" type="image/x-icon"/>
 </head>
 <body class="is-preload landing">
-
+<!-- Aplayer -->
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- Using MetingJS quick init -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
 <!--引入访问统计-->
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
@@ -37,13 +41,13 @@
                 <li>
                     <a href="#" class="button primary">周目历史</a>
                     <ul>
-                        <li><a href="test.html">没做完</a></li>
-                        <li><a href="test.html">Season One</a></li>
-                        <li><a href="www.github.com">Season Two</a></li>
-                        <li><a href="www.github.com">Season Three</a></li>
-                        <li><a href="www.github.com">Season Four</a></li>
-                        <li><a href="www.github.com">Season Five</a></li>
-                        <li><a href="www.github.com">Season Six</a></li>
+                        <li><a href="#">没做完</a></li>
+                        <li><a href="#">Season One</a></li>
+                        <li><a href="#">Season Two</a></li>
+                        <li><a href="#">Season Three</a></li>
+                        <li><a href="#">Season Four</a></li>
+                        <li><a href="#">Season Five</a></li>
+                        <li><a href="#">Season Six</a></li>
                         <li>
                             <!--                            <a href="#">Submenu</a>-->
                             <!--                            <ul>-->
@@ -278,7 +282,7 @@
 
 
             </header>
-            <span class="image"><img src="http://ww1.sinaimg.cn/large/007Xb1Wggy1g66pqkiox3j30hs0ie4il.jpg" alt=""/></span>
+            <span class="image"><img src="images\center.webp" alt=""/></span>
         </div>
         <a href="#one" class="goto-next scrolly">Next</a>
     </section>
@@ -343,7 +347,7 @@
 
     <!-- One -->
     <section id="one" class="spotlight style1 bottom">
-        <span class="image fit main"><img src="http://ww1.sinaimg.cn/large/007Xb1Wggy1g66pqkf6w0j318g0j0jvg.jpg" alt=""/></span>
+        <span class="image fit main"><img src="images/bg_1.webp" alt=""/></span>
         <div class="content">
             <div class="container">
                 <header>
@@ -368,7 +372,7 @@
 
     <!-- Two -->
     <section id="two" class="spotlight style2 right">
-        <span class="image fit main"><img src="http://ww1.sinaimg.cn/large/007Xb1Wggy1g66pqkc0yfj318g0j0whm.jpg" alt=""/></span>
+        <span class="image fit main"><img src="images/bg_2.webp" alt=""/></span>
         <div class="content">
             <header>
                 <h2>入群须知</h2>
@@ -397,7 +401,7 @@
 
     <!-- Three -->
     <section id="three" class="spotlight style3 left">
-        <span class="image fit main bottom"><img src="http://ww1.sinaimg.cn/large/007Xb1Wggy1g66pqkca71j318g0j0ae9.jpg" alt=""/></span>
+        <span class="image fit main bottom"><img src="images/bg_3.webp" alt=""/></span>
         <div class="content">
             <header>
                 <h2>入群方法</h2>
@@ -408,15 +412,15 @@
                 Mod主群:819397581
                 <a target="_blank"
                    href="//shang.qq.com/wpa/qunwpa?idkey=7b27f023badc4fc8d022d18af7fb851c1ebe64b45c14ffe4420dde7bd53fa082"><img
-                        border="0" src="http://ww1.sinaimg.cn/large/007Xb1Wggy1g66pqkbpmij301s00o0k3.jpg" alt="Regain the Legend"
-                        title="Regain the Legend"></a><br>
+                        border="0" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAYCAIAAADF1mwTAAAAA3NCSVQICAjb4U/gAAACi0lEQVRYhdVYMYsaQRR+JgMpBO0Cs2WwEFLupUizhXW2ThUICLHe4yoJnP6BWLtw4F+QvfoK650iRcBC0vkWbMIJdhZXPH1OZsdxV413+VgW583s7PfmfW/erJU0TSGHLMvyRoZSyvd9pZRjzMVQSdP0hVApiziOwzAU1PA878TpEPFkSoVAy+37PjUFq4UYKKXCMEyShO6X4VQcRAy2bgDAK72bxP3C2RMxDvjOAVp7jkCpqSeNIV1npMsgMnynCDAE/6K156GjadMx6dfmVG8Gs86kMVwvMf+Cs4AXND/5zgF9LxpNm+8+RY4ZR/cDw4dSIG9bi36pp3T2nLo7CXFeG/h9P3A0j8N6iaCta0Ho46WUAICI9gj8a7QW/eLsrZrkCIh8nwFDS25pHQQnerV9a0govwcEs87BCe0OvJ9c306urbWNdq8+ADS/FSFqsKF0J4ue8WQkaW2Y1byHt6aTDCklBcEVAWtpvfk+B4D5uPvByV6nYrAJZp0kSapt8wy2XuLq7oqb9WiTJ0dKyAPALd3j4GAThmFyd2VltotJgVcgolBKUUabfaexd7OZNIbnqhb2CPwKftwEnwFgPu5aB3z5+KbUax4HnqEZh75LQfi+j4jWs+R83HUTpcwrslfUI3wceIZmzlK290roIHsAWC9R1DzrEUjUvHqEunKq7RT+XvJ6hA/l6zFsT3K09JtKbFSx139+FhFJa9FfL5Gv1TYvg1lHt3MvFy/ao3Sj/jiPWdkSHRHp64U4V3q9HkXg6Eq876Rl1Fprr27MKypvIfaISNuolHLjwH/xVcnsYVsHpJSC+56Tmg1ZlnG51Y3GMAEAcRxfjlcZuP8cIQjYc9x7LuzTwj77EwlRoeTcqVUxAAAAAElFTkSuQmCC" alt="Regain the Legend"
+                        title="Regain the Legend"></a><br> <!-- 加群图片用webp色彩爆炸 -->
                 小游戏分群:680686411
                 <a target="_blank"
                    href="//shang.qq.com/wpa/qunwpa?idkey=805d11e618613cb54b466c72219f2f6771799d161849154dad00e9a8b97edef8"><img
-                        border="0" src="http://ww1.sinaimg.cn/large/007Xb1Wggy1g66pqkbpmij301s00o0k3.jpg" alt="Regain the Legend -Gaming"
-                        title="Regain the Legend -Gaming"></a><br>
+                        border="0" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAYCAIAAADF1mwTAAAAA3NCSVQICAjb4U/gAAACi0lEQVRYhdVYMYsaQRR+JgMpBO0Cs2WwEFLupUizhXW2ThUICLHe4yoJnP6BWLtw4F+QvfoK650iRcBC0vkWbMIJdhZXPH1OZsdxV413+VgW583s7PfmfW/erJU0TSGHLMvyRoZSyvd9pZRjzMVQSdP0hVApiziOwzAU1PA878TpEPFkSoVAy+37PjUFq4UYKKXCMEyShO6X4VQcRAy2bgDAK72bxP3C2RMxDvjOAVp7jkCpqSeNIV1npMsgMnynCDAE/6K156GjadMx6dfmVG8Gs86kMVwvMf+Cs4AXND/5zgF9LxpNm+8+RY4ZR/cDw4dSIG9bi36pp3T2nLo7CXFeG/h9P3A0j8N6iaCta0Ho46WUAICI9gj8a7QW/eLsrZrkCIh8nwFDS25pHQQnerV9a0govwcEs87BCe0OvJ9c306urbWNdq8+ADS/FSFqsKF0J4ue8WQkaW2Y1byHt6aTDCklBcEVAWtpvfk+B4D5uPvByV6nYrAJZp0kSapt8wy2XuLq7oqb9WiTJ0dKyAPALd3j4GAThmFyd2VltotJgVcgolBKUUabfaexd7OZNIbnqhb2CPwKftwEnwFgPu5aB3z5+KbUax4HnqEZh75LQfi+j4jWs+R83HUTpcwrslfUI3wceIZmzlK290roIHsAWC9R1DzrEUjUvHqEunKq7RT+XvJ6hA/l6zFsT3K09JtKbFSx139+FhFJa9FfL5Gv1TYvg1lHt3MvFy/ao3Sj/jiPWdkSHRHp64U4V3q9HkXg6Eq876Rl1Fprr27MKypvIfaISNuolHLjwH/xVcnsYVsHpJSC+56Tmg1ZlnG51Y3GMAEAcRxfjlcZuP8cIQjYc9x7LuzTwj77EwlRoeTcqVUxAAAAAElFTkSuQmCC" alt="Regain the Legend -Gaming"
+                        title="Regain the Legend -Gaming"></a><br> <!-- 加群图片用webp色彩爆炸 -->
                 Mcmod链接:<a href="https://play.mcmod.cn/sv20181588.html"><img
-                    src="https://www.mcmod.cn/static/public/images/favicon.ico"></a>
+                    src="data:image/x-icon;base64,AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAAAAAABMLAAATCwAAAAAAAAAAAAAAAAAAAAAAAAAAAADdtlYH2LZYXti2WLLYtljb2LZY6Ni2WOjYtljo2LZY6Ni2WOjYtljo2LZY6Ni2WOjYtljo2LZY6Ni2WOjYtljo2LZY6Ni2WOjYtljo2LZY6Ni2WOjYtljo2LZY3ti2WLrYtlhq2LZYDgAAAAAAAAAAAAAAAAAAAAAAAAAAw7hfMd62VsnYtlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/YtljW2LZYQwAAAAAAAAAAAAAAAFHBiCaXvG/n37VW/9q2V//Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj02LZYOgAAAABVwYYIVMGGyk/CiP+TvHD/3rZW/9q2V//Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytljh2LZYFFXBhlZVwYb/VMGG/03CiP+RvHH/3rZW/9q2V//Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/YtlhzVcGGqFXBhv9VwYb/VMGG/03Cif+PvHL/3LZW/9q2V//Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WMNVwYbTVcGG/1XBhv9VwYb/VMGG/0zCif+MvHP/3rZW/9q2V//Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY5FXBht9VwYb/VcGG/1XBhv9VwYb/VMGG/07Cif+JvXT/3LZX/9u2V//Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/YtljtVcGG3lXBhv9VwYb/T7+C/06/gf9Rv4P/VcGG/03Cif+DvXX/1LNT/9izUf/XtFP/2LZY/9i2WP/Ytlj/17NS/9azUf/XtFP/2LZY/9i2WP/Ytlj/17RU/9ezUv/Ws1H/1rNR/9azUf/Ws1H/1rNR/9azUf/YtVb/2LZY/9i2WOxVwYbeVMGG/1fCh/91zZ3/ec6g/2vJlv9TwIX/VMGG/07Ci/+nyo7/5MV6/9/CdP/YtVf/2LZX/9m3Wf/fxHf/4MV7/97Bcf/Ytlf/17VW/9azUf/cvWn/4MV6/+DFe//gxXv/4MV7/+DFe//gxXv/4MV7/9q6YP/YtVf/2LZY7FXBht5SwIT/XcSL/+z48v//////wOfS/0y+gP9NvoD/g9Kn//v//////////Prz/9u8Zv/Ws1L/2rlf//r37P//////8+nN/9ayT//Yt1n/7+G6//z69P//////////////////////////////////////4siA/9azUf/YtljsVcGG3lLAhP9dxIv/7Pjy///////A59L/TL6A/02+gP/F6tb/////////////////6NGW/9exS//auV//+vbs///////z6c3/1bBJ/+3dsf/////////////////////////////////////////////////jyYL/1rNR/9i2WOxVwYbeUsCE/13Ei//r+PH//////7/n0f9JvX3/ZMaR//X7+P/////////////////q69P/z7NR/965Xf/69uv///////Poyv/Ytlf/+/fs///////7+O//6NOb/+TMi//kzY3/5M2N/+TNjf/kzY3/5M2N/9u8Zf/XtVb/2LZY7FXBht5SwIT/XcSL/+v48f//////v+fR/0O6ef+V2LT////////////3/Pn///////L9/f+Qxoj/0rhc//326v//////8ufI/9u7ZP/9/Pf//////+7etP/UrkX/1rJP/9ayT//Wsk//1rJP/9ayT//Wsk//17VW/9i2WP/YtljsVcGG3lLAhP9dxIv/6/jx//////+959D/Sb19/9fx4///////6/jx/5rat////////////6Dfwv9vvnr/9/ft///////y58j/27xl//389///////7Nut/9axTv/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WOxVwYbeUsCE/13Ei//r+PH//////7nlzf9pyZT//P79///////A6NL/VMGF/+z48v//////3fLm/1jEjP/p+PH///////LnyP/bvGX//fz3///////s3K7/1rFO/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY7FXBht5SwIT/XcSL/+v48f//////tOTK/6Ldvf///////////4fTqv9Cunn/t+XM///////9/v7/gNGl/+T17P//////9OfH/968ZP/9/Pf//////+zcrv/WsU7/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/YtljsVcGG3lLAhP9dxIv/6/jx//////+/6NH/2PHj///////s+PL/XMSL/0u9gP94zp///v/+//////+858//4fTq///////d6c//zL1r///89///////69ur/9awTf/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WP/Ytlj/2LZY/9i2WOxVwYbeUsCE/13Ei//r+PH//////+z48f/7/vz//////7Dix/9LvX//VMGG/1PAhf/d8+f///////X8+P/0+/j//////8Tr2f9vw4b/+fv2///////y58f/1rJP/9ayT//Ws1D/1rNQ/9ayUP/XtVX/2LZY/9i2WP/Ytlj/2LZY7FXBht5SwIT/XcSL/+v48f/////////////////9/v7/dc2d/0+/gf9VwYb/Sr1//6bev///////////////////////yuzZ/0q/gv/g9Or////////////17NT/8eXD//Lmxf/y5sX/7+G6/9u6Yv/Ws1H/2LZY/9i2WP/YtljsVcGG3lLAhP9dxIv/8Pr1/////////////////93z5/9SwIT/VMGF/1XBhv9Qv4L/bsqY//3//v/////////////////P7t3/Rrx7/43Wrv/+//7/////////////////////////////////+PLg/9y+av/XtFT/2LZY/9i2WOxVwYbeU8CE/1vDiv/P7t3/3/Po/9/z6P/f8+j/lti0/0y+gP9VwYb/VcGG/1XBhv9Qv4P/uubO/9/z6f/f8+j/3/Po/7Xkyv9Pv4L/Tb6B/4HRpv/H69n/7PHi//3x3v/38eD/+PHg//jx4P/59OX/7+K8/9i3Wf/Ytlf/2LZY7FXBht5VwYb/VcGG/1bBhv9WwYf/VsGH/1bBh/9TwIT/VcGG/1XBhv9VwYb/VcGG/1TBhv9TwIX/VsGH/1bBh/9WwYf/VcGG/1XBhv9VwYb/Tr6B/0u/g/9mwID/xbhg/9+2Vv/Ytln/2LZZ/9i2Wf/ZuV7/2bda/9i2WP/YtljsVcGG3lXBhv9VwYb/VMGF/1TAhf9UwIX/U8CF/1TBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1TBhf9TwIX/VMCF/1PAhf9UwYX/VcGG/1XBhv9VwYb/VcGG/07Bh/9hv4D/xLdd/9+1VP/XtVf/2LVX/9i1V//Ytlj/2LZY/9i2WOxVwYbfVcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1DCiP9gwIP/wLhg/+C1Vf/Ytlj/2LZY/9i2WP/Ytlj/2LZY7VXBhtVVwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/0/CiP9dwIP/vrhh/+C1Vf/Ytlj/2LZY/9i2WP/YtljmVcGGrVXBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1DCiP9dwIP/vbhi/+C1Vf/Ytlj/2LZY/9i2WMdVwYZdVcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1DBiP9awYT/urli/+G1Vf/Ytlj/2LZYe1XBhgxVwYbUVcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1DBiP9bwYT/t7lk/+O1VenftVYZAAAAAFXBhjBVwYbwVcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1HBiP9awYT7pbpqRwAAAAAAAAAAAAAAAFXBhj5VwYbWVcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG/1XBhv9VwYb/VcGG4lPBh1IAAAAAAAAAAAAAAAAAAAAAAAAAAFXBhg9VwYZwVcGGx1XBhutVwYbtVcGG7VXBhu1VwYbtVcGG7VXBhu1VwYbtVcGG7VXBhu1VwYbtVcGG7VXBhu1VwYbtVcGG7VXBhu1VwYbtVcGG7VXBhu1VwYbtVcGGzlXBhn1VwYYZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="></a>
             </p>
             <ul class="actions">
                 <li><a href="#" class="button">Learn More</a></li>
@@ -442,28 +446,6 @@
     <!--            </form>-->
     <!--        </div>-->
     <!--    </section>-->
-
-    <!--aplayer音乐播放器-->
-    <div>
-        <div id="player" class="aplayer"></div>
-        <script src="aplayer/APlayer.min.js"></script>
-        <script>
-            var ap = new APlayer({
-                fixed:true,
-                music: {
-                    prefix:true,
-                    title: '千年幻想乡',                                          // Required, music title
-                    author: '神乃木製作所',                          // Required, music author
-                    url: 'https://music.163.com/song/media/outer/url?id=767452',  // Required, music url
-                    pic: 'http://p2.music.126.net/QdxRMFtZCNkTsvJtNfpHpg==/565148976688829.jpg?param=130y130',  // Optional, music picture
-
-                }
-            });
-            ap.play();
-        </script>
-    </div>
-
-
 </div>
     <!-- Footer -->
     <footer id="footer">
@@ -476,20 +458,27 @@
             <li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
         </ul>
         <ul class="copyright">
-            <li>&copy; Untitled. All rights reserved.</li>
+            <li>&copy;2018 -
+                <script>
+                document.write(new Date().getFullYear())
+                </script> Regain the Legend. All rights reserved.
+            </li>
         </ul>
     </footer>
+    <meting-js id="767452" server="netease" type="song" fixed="true" autoplay="true">
 
 
 <!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/jquery.dropotron.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/jquery.dropotron/1.4.3/jquery.dropotron.min.js"></script>
+<script src="https://cdnjs.loli.net/ajax/libs/jquery.scrollex/0.2.1/jquery.scrollex.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+
+
 
 </body>
 </html>
